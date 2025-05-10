@@ -1,0 +1,355 @@
+{
+  "players": [
+    {
+      "name": "Karch Kiraly",
+      "country": "USA",
+      "known_for": "3x Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Karch Kiraly</h4><p class=\"mb-2\">Height: 1.88 m (6'2\")</p><p class=\"mb-2\">Discipline: Indoor and Beach</p><p>Widely considered the greatest volleyball player of all time, Charles Frederick \"Karch\" Kiraly is the only athlete to win Olympic gold in both indoor (1984, 1988) and beach (1996) volleyball. He led the U.S. Men's National Team during its golden era, dominating the 1980s with two Olympic golds and a World Championship. After transitioning to beach volleyball, he revolutionized the sport with his tenacity and elite ball control, amassing over 140 tournament victories. Later, as coach of the U.S. Women's National Team, he led them to their first Olympic gold in 2020. Kiraly is a founding figure in American volleyball culture and a pioneer in both disciplines.</p>"
+    },
+    {
+      "name": "Giba",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist, 3x World Champion",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Giba</h4><p class=\"mb-2\">Height: 1.92 m (6'3\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Gilberto Amauri de Godoy Filho, known as Giba, was the charismatic leader of Brazil's men's national team during their most dominant period. Despite not having the height or raw power of his peers, Giba's explosive athleticism, relentless defense, and emotional leadership made him a fan favorite. He won gold at the 2004 Olympics and silver in 2008 and 2012. Additionally, he captured three World Championship titles (2002, 2006, 2010) and eight World League titles. His aggressive play style, emotional celebrations, and ability to deliver in clutch moments define his legacy.</p>"
+    },
+    {
+      "name": "Sergio Santos",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist, defensive specialist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Sergio Dutra Santos \"Escadinha\"</h4><p class=\"mb-2\">Born: October 15, 1975 in São Paulo, Brazil</p><p class=\"mb-2\">Olympic gold medalist in 2004 and silver medalist in 2008 and 2012.</p><p class=\"mb-2\">Nicknamed \"Escadinha\" (Little Ladder) because of his incredible jumping ability despite being only 5'8\".</p><p class=\"mb-2\">Considered one of the greatest liberos in volleyball history, revolutionizing the position with his spectacular defensive plays.</p><p>Won the Best Libero award at numerous international competitions, including the World Championship and World Cup.</p>"
+    },
+    {
+      "name": "Ivan Zaytsev",
+      "country": "Italy",
+      "known_for": "Powerful opposite hitter",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Ivan Zaytsev \"The Tsar\"</h4><p class=\"mb-2\">Born: October 2, 1988 in Spoleto, Italy (to Russian and Italian parents)</p><p class=\"mb-2\">Olympic silver medalist with Italy in 2016 and bronze medalist in 2012.</p><p class=\"mb-2\">Known for having one of the most powerful serves in volleyball, recorded at over 134 km/h (83 mph).</p><p class=\"mb-2\">Versatile player who has played as an outside hitter, opposite, and even setter during his career.</p><p>Recognizable for his distinctive mohawk hairstyle and numerous tattoos, making him one of volleyball's most marketable personalities.</p>"
+    },
+    {
+      "name": "Wilfredo León",
+      "country": "Poland/Cuba",
+      "known_for": "One of the highest paid players",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Wilfredo León</h4><p class=\"mb-2\">Height: 2.01 m (6'7\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Born in Cuba and now representing Poland, León is widely regarded as one of the most physically gifted players of his generation. He debuted with Cuba's national team at age 14 and led them to a silver medal at the 2010 World Championship. After naturalizing in Poland, León brought his unmatched power and aerial ability to the Polish squad, quickly becoming a game-changer. Known for his devastating serve and high-velocity attacking, he plays for top-tier clubs and is feared worldwide.</p>"
+    },
+    {
+      "name": "Earvin N'Gapeth",
+      "country": "France",
+      "known_for": "Olympic gold medalist, creative attacker",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Earvin N'Gapeth</h4><p class=\"mb-2\">Born: February 12, 1991 in Saint-Raphaël, France</p><p class=\"mb-2\">Led France to their first Olympic gold medal in volleyball at the 2020 Tokyo Olympics.</p><p class=\"mb-2\">Son of Eric N'Gapeth, a former volleyball player who represented France in the 1980s.</p><p class=\"mb-2\">Known for his acrobatic style and unconventional attacks, including the \"back spike\" (attacking while facing away from the net).</p><p>Considered one of the most creative and entertaining players in modern volleyball.</p>"
+    },
+    {
+      "name": "Yuji Nishida",
+      "country": "Japan",
+      "known_for": "Young star with incredible vertical",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Yuji Nishida</h4><p class=\"mb-2\">Born: January 30, 2000 in Mie Prefecture, Japan</p><p class=\"mb-2\">Despite being only 6'2\" (relatively short for his position), has one of the highest vertical jumps in volleyball at 44 inches.</p><p class=\"mb-2\">Made his professional debut at just 17 years old and quickly became Japan's ace attacker.</p><p class=\"mb-2\">Known for his powerful jump serve that can reach speeds of over 130 km/h (80 mph).</p><p>Helped lead Japan back to volleyball prominence, including a quarterfinal appearance at the 2020 Tokyo Olympics.</p>"
+    },
+    {
+      "name": "Matt Anderson",
+      "country": "USA",
+      "known_for": "Olympic bronze medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Matthew Anderson</h4><p class=\"mb-2\">Born: April 18, 1987 in Buffalo, New York</p><p class=\"mb-2\">Olympic bronze medalist with Team USA in 2016 and a key player in the U.S. resurgence in men's volleyball.</p><p class=\"mb-2\">Versatile player who transitioned from outside hitter to opposite to become the team's primary attacker.</p><p class=\"mb-2\">Has played professionally in Russia, Italy, and Japan, becoming one of the highest-paid American volleyball players.</p><p>Known for his powerful serve, exceptional ball control, and leadership on the court.</p>"
+    },
+    {
+      "name": "Bartosz Kurek",
+      "country": "Poland",
+      "known_for": "World Champion MVP",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Bartosz Kurek</h4><p class=\"mb-2\">Born: August 29, 1988 in Wałbrzych, Poland</p><p class=\"mb-2\">Named MVP of the 2018 FIVB Volleyball Men's World Championship, leading Poland to their second consecutive title.</p><p class=\"mb-2\">Son of volleyball player Adam Kurek, making them one of Poland's most famous volleyball families.</p><p class=\"mb-2\">Known for his powerful attacking from both the front and back rows, with exceptional versatility.</p><p>Has overcome several serious injuries throughout his career to remain one of the world's elite players.</p>"
+    },
+    {
+      "name": "Dmitriy Muserskiy",
+      "country": "Russia",
+      "known_for": "Olympic gold medalist, 7'2\" tall",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Dmitriy Muserskiy</h4><p class=\"mb-2\">Born: October 29, 1988 in Makiivka, Ukraine (represents Russia)</p><p class=\"mb-2\">At 7'2\" (218 cm), he is one of the tallest professional volleyball players in history.</p><p class=\"mb-2\">Led Russia to Olympic gold in 2012, scoring 31 points in the final against Brazil in a legendary performance.</p><p class=\"mb-2\">Uniquely versatile for his height, having played as both a middle blocker and opposite hitter.</p><p>Has one of the highest reaches in volleyball, with a spiking reach of 12'6\" (382 cm).</p>"
+    },
+    {
+      "name": "Misty May-Treanor",
+      "country": "USA",
+      "known_for": "3x Olympic gold medalist in beach volleyball",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Misty May-Treanor</h4><p class=\"mb-2\">Height: 1.75 m (5'9\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Misty May-Treanor is a beach volleyball legend and three-time Olympic gold medalist (2004, 2008, 2012) alongside Kerri Walsh Jennings. Known for her flawless technique, ball control, and impenetrable defense, Misty played with a cerebral edge. She won over 100 career titles, including three FIVB World Championships. A fierce competitor who overcame multiple injuries and personal hardships, Misty retired as one of the most decorated athletes in volleyball history and helped elevate the visibility of women's beach volleyball worldwide.</p>"
+    },
+    {
+      "name": "Kerri Walsh Jennings",
+      "country": "USA",
+      "known_for": "3x Olympic gold medalist in beach volleyball",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Kerri Walsh Jennings</h4><p class=\"mb-2\">Height: 1.88 m (6'2\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Kerri Walsh Jennings, often referred to as \"Six Feet of Sunshine,\" is one of the most iconic figures in volleyball. She teamed with Misty May-Treanor to form the most successful beach volleyball duo in history, winning three consecutive Olympic golds. Known for her dominant blocking, leadership, and relentless pursuit of excellence, she added a bronze medal in 2016 with April Ross. Kerri's longevity, including her return to elite play after giving birth, is a testament to her extraordinary fitness and mental toughness.</p>"
+    },
+    {
+      "name": "Logan Tom",
+      "country": "USA",
+      "known_for": "4x Olympian",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Logan Tom</h4><p class=\"mb-2\">Born: May 25, 1981 in Napa, California</p><p class=\"mb-2\">Four-time Olympian (2000, 2004, 2008, 2012), winning silver medals in 2008 and 2012.</p><p class=\"mb-2\">One of the youngest Olympic volleyball players ever, making her debut at just 19 years old.</p><p class=\"mb-2\">Versatile player who excelled at both outside hitter and libero positions during her career.</p><p>Has played professionally in more countries than almost any other player, including Brazil, Italy, Switzerland, Spain, Russia, China, and Japan.</p>"
+    },
+    {
+      "name": "Sheilla Castro",
+      "country": "Brazil",
+      "known_for": "2x Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Sheilla Castro</h4><p class=\"mb-2\">Born: July 1, 1983 in Belo Horizonte, Brazil</p><p class=\"mb-2\">Two-time Olympic gold medalist (2008, 2012) and bronze medalist (2016) with Brazil.</p><p class=\"mb-2\">Known for her powerful attacking and clutch performances in critical matches.</p><p class=\"mb-2\">After retiring in 2016, she returned to volleyball in 2018 and made a comeback to the Brazilian national team.</p><p>One of the most decorated players in Brazilian volleyball history, with multiple World Championship and Grand Prix medals.</p>"
+    },
+    {
+      "name": "Yekaterina Gamova",
+      "country": "Russia",
+      "known_for": "2x World Champion, 6'8\" tall",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Yekaterina Gamova</h4><p class=\"mb-2\">Born: October 17, 1980 in Chelyabinsk, Russia</p><p class=\"mb-2\">At 6'8\" (202 cm), she was one of the tallest female volleyball players in history.</p><p class=\"mb-2\">Two-time Olympic silver medalist (2000, 2004) and two-time World Champion (2006, 2010).</p><p class=\"mb-2\">Named MVP of the 2010 World Championship, leading Russia to the gold medal.</p><p>Known as \"The Empress\" for her dominance at the net, both attacking and blocking.</p>"
+    },
+    {
+      "name": "Saori Kimura",
+      "country": "Japan",
+      "known_for": "Japanese volleyball icon",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Saori Kimura</h4><p class=\"mb-2\">Born: August 19, 1986 in Saitama, Japan</p><p class=\"mb-2\">Three-time Olympian (2004, 2008, 2012) and bronze medalist in 2012.</p><p class=\"mb-2\">Made her Olympic debut at just 17 years old, one of the youngest volleyball Olympians ever.</p><p class=\"mb-2\">Served as Japan's captain and was the flag bearer for Japan at the 2016 Rio Olympics opening ceremony.</p><p>Known for her all-around skills and exceptional ball control, compensating for her relatively modest height (5'10\").</p>"
+    },
+    {
+      "name": "Zhu Ting",
+      "country": "China",
+      "known_for": "2x Olympic medalist, MVP",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Zhu Ting</h4><p class=\"mb-2\">Born: November 29, 1994 in Zhoukou, China</p><p class=\"mb-2\">Led China to Olympic gold in 2016 as the tournament MVP and won silver in 2020.</p><p class=\"mb-2\">Became the highest-paid volleyball player in the world (male or female) when she signed with Turkish club VakıfBank in 2016.</p><p class=\"mb-2\">Known for her incredible wingspan and attacking efficiency from both front and back rows.</p><p>Overcame a rural, impoverished background to become one of volleyball's greatest players.</p>"
+    },
+    {
+      "name": "Paola Egonu",
+      "country": "Italy",
+      "known_for": "One of the world's best attackers",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Paola Egonu</h4><p class=\"mb-2\">Born: December 18, 1998 in Cittadella, Italy (to Nigerian parents)</p><p class=\"mb-2\">Olympic silver medalist with Italy in 2020 Tokyo Olympics.</p><p class=\"mb-2\">Holds the record for the fastest recorded spike in women's volleyball at 112 km/h (70 mph).</p><p class=\"mb-2\">Known for her incredible vertical jump (over 3 feet) and powerful attacking from all positions on the court.</p><p>An outspoken advocate for racial equality and against discrimination in sports.</p>"
+    },
+
+    {
+      "name": "Kim Yeon-koung",
+      "country": "South Korea",
+      "known_for": "Olympic MVP",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Kim Yeon-koung</h4><p class=\"mb-2\">Born: February 26, 1988 in Seoul, South Korea</p><p class=\"mb-2\">Named MVP of the 2012 London Olympics despite South Korea finishing 4th, a rare honor for a player not on the medal podium.</p><p class=\"mb-2\">Has played professionally in South Korea, Japan, Turkey, and China, becoming one of Asia's most successful volleyball exports.</p><p class=\"mb-2\">Known for carrying her national team, sometimes scoring more than half of South Korea's total points in important matches.</p><p>Considered the greatest Korean volleyball player of all time and one of Asia's greatest sporting icons.</p>"
+    },
+    {
+      "name": "Maxim Mikhaylov",
+      "country": "Russia",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Maxim Mikhaylov</h4><p class=\"mb-2\">Height: 2.02 m (6'8\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Mikhaylov is a powerhouse opposite hitter from Russia, known for his high volleyball IQ, precision, and devastating spike. He played a central role in Russia's Olympic gold medal run in 2012 and silver in 2020. He was also instrumental in the 2011 World Cup and multiple European Championship podiums. Mikhaylov is renowned for his efficiency in attack, excellent serving, and leadership during critical moments.</p>"
+    },
+    {
+      "name": "April Ross",
+      "country": "USA",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">April Ross</h4><p class=\"mb-2\">Height: 1.85 m (6'1\")</p><p class=\"mb-2\">Discipline: Beach</p><p>April Ross is a three-time Olympic medalist: silver (2012), bronze (2016), and gold (2020, with Alix Klineman). Known for her aggressive jump serve and high-flying attacking, Ross adapted across multiple partnerships, including with Walsh Jennings and Klineman. A fierce competitor with deep tactical insight, she has also won numerous AVP and FIVB titles. April is widely respected for her adaptability, intelligence, and fierce work ethic.</p>"
+    },
+    {
+      "name": "Emanuel Rego",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Emanuel Rego</h4><p class=\"mb-2\">Height: 1.90 m (6'3\")</p><p class=\"mb-2\">Discipline: Beach</p><p>A Brazilian icon, Emanuel is one of the most decorated players in beach volleyball history. Competing in five Olympic Games, he earned gold in 2004, silver in 2012, and bronze in 2008. He has over 150 professional wins, including a World Championship in 2003. Emanuel was known for his graceful movement, exceptional ball control, and tactical genius. He often partnered with Ricardo Santos, creating one of the most formidable teams in beach history.</p>"
+    },
+    {
+      "name": "Laura Ludwig",
+      "country": "Germany",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Laura Ludwig</h4><p class=\"mb-2\">Height: 1.81 m (5'11\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Laura Ludwig is the first German woman to win an Olympic gold in beach volleyball (2016, with Kira Walkenhorst). Known for her relentless defense and strategic brilliance, she is also a European and World Champion. Ludwig has overcome multiple injuries and returned to competition post-pregnancy. Her grit, mental resilience, and technical excellence have made her a role model in the beach volleyball world.</p>"
+    },
+    {
+      "name": "Bruno Rezende",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist, legendary setter",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Bruno Rezende</h4><p class=\"mb-2\">Born: July 2, 1986 in Rio de Janeiro, Brazil</p><p class=\"mb-2\">Olympic gold medalist (2016) and silver medalist (2008, 2012) with Brazil.</p><p class=\"mb-2\">Son of volleyball legend and coach Bernardo Rezende, continuing a family legacy in the sport.</p><p class=\"mb-2\">Considered one of the greatest setters of all time, known for his precision, creativity, and leadership.</p><p>Has won multiple World Championships and World League titles as Brazil's captain.</p>"
+    },
+    {
+      "name": "Natalia Pereira",
+      "country": "Brazil",
+      "known_for": "Olympic champion, powerful attacker",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Natalia Pereira</h4><p class=\"mb-2\">Born: April 4, 1989 in Ponta Grossa, Brazil</p><p class=\"mb-2\">Olympic gold medalist with Brazil in 2012 and silver medalist in 2020.</p><p class=\"mb-2\">Known for her explosive attacking power and ability to score from difficult positions.</p><p class=\"mb-2\">Has played professionally in top leagues in Brazil, Turkey, and Italy.</p><p>Multiple-time World Grand Prix champion and one of Brazil's most consistent performers.</p>"
+    },
+    {
+      "name": "Facundo Conte",
+      "country": "Argentina",
+      "known_for": "Olympic bronze medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Facundo Conte</h4><p class=\"mb-2\">Born: August 25, 1989 in Buenos Aires, Argentina</p><p class=\"mb-2\">Olympic bronze medalist with Argentina in 2020, the country's first Olympic medal in men's volleyball.</p><p class=\"mb-2\">Son of Hugo Conte, another Argentine volleyball legend who won bronze at the 1988 Olympics.</p><p class=\"mb-2\">Known for his powerful attacking and emotional leadership on the court.</p><p>Has played professionally in top leagues in Italy, Russia, China, and Poland.</p>"
+    },
+    {
+      "name": "Simone Giannelli",
+      "country": "Italy",
+      "known_for": "World Championship MVP",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Simone Giannelli</h4><p class=\"mb-2\">Born: August 9, 1996 in Bolzano, Italy</p><p class=\"mb-2\">Olympic silver medalist with Italy in 2016 at just 19 years old.</p><p class=\"mb-2\">Named MVP of the 2021 European Championship and 2022 World Championship, leading Italy to gold in both tournaments.</p><p class=\"mb-2\">Considered one of the most talented setters of his generation, known for his quick hands and creative play.</p><p>Has won multiple club championships with Italian powerhouse Sir Safety Perugia.</p>"
+    },
+    {
+      "name": "Nataliya Goncharova",
+      "country": "Russia",
+      "known_for": "Olympic champion, powerful attacker",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Nataliya Goncharova</h4><p class=\"mb-2\">Born: June 1, 1989 in Skhira, Uzbekistan (represents Russia)</p><p class=\"mb-2\">Olympic gold medalist with Russia in 2012 and silver medalist in 2020.</p><p class=\"mb-2\">One of the most powerful attackers in women's volleyball, known for her devastating spike.</p><p class=\"mb-2\">Multiple-time Russian league MVP and European champion.</p><p>Has been Russia's go-to scorer in critical moments throughout her career.</p>"
+    },
+    {
+      "name": "Tijana Bošković",
+      "country": "Serbia",
+      "known_for": "World Championship MVP",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Tijana Bošković</h4><p class=\"mb-2\">Born: March 8, 1997 in Bileća, Bosnia and Herzegovina (represents Serbia)</p><p class=\"mb-2\">Olympic silver medalist with Serbia in 2016 and bronze medalist in 2020.</p><p class=\"mb-2\">Two-time World Championship MVP (2018, 2022), leading Serbia to consecutive gold medals.</p><p class=\"mb-2\">Known for her incredible power and precision as an opposite hitter.</p><p>Considered one of the most dominant attackers in women's volleyball today.</p>"
+    },
+    {
+      "name": "Alison Cerutti",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist in beach volleyball",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Alison Cerutti</h4><p class=\"mb-2\">Born: December 7, 1985 in Vitória, Brazil</p><p class=\"mb-2\">Olympic gold medalist in 2016 (with Bruno Schmidt) and silver medalist in 2012 (with Emanuel).</p><p class=\"mb-2\">Known as \"The Mammoth\" due to his imposing 6'8\" frame and powerful blocking.</p><p class=\"mb-2\">World Champion in 2011 and 2015, dominating the international beach volleyball scene.</p><p>Known for his incredible athleticism despite his size and his ability to cover the court.</p>"
+    },
+    {
+      "name": "Alix Klineman",
+      "country": "USA",
+      "known_for": "Olympic gold medalist in beach volleyball",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Alix Klineman</h4><p class=\"mb-2\">Born: December 30, 1989 in Manhattan Beach, California</p><p class=\"mb-2\">Olympic gold medalist in 2020 with April Ross, after transitioning from indoor to beach volleyball in 2017.</p><p class=\"mb-2\">Former indoor national team member who successfully made the switch to become a beach volleyball champion.</p><p class=\"mb-2\">Known as \"The A-Team\" with partner April Ross, they dominated the AVP tour before Olympic success.</p><p>Renowned for her blocking skills and quick adaptation to the beach game.</p>"
+    },
+    {
+      "name": "Sergey Tetyukhin",
+      "country": "Russia",
+      "known_for": "4x Olympic medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Sergey Tetyukhin</h4><p class=\"mb-2\">Born: September 23, 1975 in Fergana, Uzbekistan (represents Russia)</p><p class=\"mb-2\">One of only two men's volleyball players to win four Olympic medals: gold (2012), silver (2000), and bronze (2004, 2008).</p><p class=\"mb-2\">Competed in six consecutive Olympic Games from 1996 to 2016, a remarkable feat of longevity.</p><p class=\"mb-2\">Known for his versatility, leadership, and clutch performances in big matches.</p><p>Served as Russia's flag bearer at the 2016 Rio Olympics closing ceremony.</p>"
+    },
+    {
+      "name": "Fofão",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist, legendary setter",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Helia Souza \"Fofão\"</h4><p class=\"mb-2\">Born: March 22, 1970 in São Paulo, Brazil</p><p class=\"mb-2\">Olympic gold medalist with Brazil in 2008 and bronze medalist in 1996 and 2000.</p><p class=\"mb-2\">Competed in five Olympic Games (1992-2008), one of the longest careers in volleyball history.</p><p class=\"mb-2\">Considered one of the greatest setters of all time, revolutionizing the position with her creativity.</p><p>Led Brazil during their rise to become a dominant force in women's volleyball.</p>"
+    },
+    {
+      "name": "Nikola Grbić",
+      "country": "Serbia",
+      "known_for": "Olympic gold medalist, legendary setter",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Nikola Grbić</h4><p class=\"mb-2\">Born: September 6, 1973 in Zrenjanin, Serbia</p><p class=\"mb-2\">Olympic gold medalist with Yugoslavia in 2000 and bronze medalist with Serbia in 2008.</p><p class=\"mb-2\">Considered one of the greatest setters in volleyball history, known for his precision and tactical intelligence.</p><p class=\"mb-2\">Transitioned to a successful coaching career, leading Poland to the 2022 World Championship silver medal.</p><p>Part of a volleyball family dynasty, with his brother Vladimir also being an Olympic medalist.</p>"
+    },
+    {
+      "name": "Regla Torres",
+      "country": "Cuba",
+      "known_for": "3x Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Regla Torres</h4><p class=\"mb-2\">Born: February 12, 1975 in Havana, Cuba</p><p class=\"mb-2\">Three-time Olympic gold medalist (1992, 1996, 2000) with Cuba's dominant women's team.</p><p class=\"mb-2\">Named the Best Player of the 20th Century by the FIVB, volleyball's highest individual honor.</p><p class=\"mb-2\">Won her first Olympic gold medal at just 17 years old, becoming one of the youngest Olympic champions in the sport.</p><p>Known for her incredible jumping ability, blocking, and all-around skills.</p>"
+    },
+    {
+      "name": "Mireya Luis",
+      "country": "Cuba",
+      "known_for": "3x Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Mireya Luis</h4><p class=\"mb-2\">Born: August 25, 1967 in Havana, Cuba</p><p class=\"mb-2\">Three-time Olympic gold medalist (1992, 1996, 2000) with Cuba's legendary women's team.</p><p class=\"mb-2\">Despite standing only 5'9\" (1.75m), had a 36-inch vertical jump that allowed her to spike from 11 feet high.</p><p class=\"mb-2\">Known for her explosive attacking power and ability to dominate much taller opponents.</p><p>Led Cuba during their period of global dominance in women's volleyball.</p>"
+    },
+    {
+      "name": "Ricardo Santos",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist in beach volleyball",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Ricardo Santos</h4><p class=\"mb-2\">Born: January 6, 1975 in Salvador, Brazil</p><p class=\"mb-2\">Olympic gold medalist in 2004, silver in 2000, and bronze in 2008 in beach volleyball.</p><p class=\"mb-2\">Known as \"The Wall\" for his exceptional blocking skills at 6'4\" (1.93m).</p><p class=\"mb-2\">Won multiple FIVB World Championships and was named the FIVB Best Blocker for several consecutive years.</p><p>Formed legendary partnerships with Emanuel Rego and later with Pedro Solberg, dominating the international beach volleyball scene.</p>"
+    }
+  ,
+    {
+      "name": "Lang Ping",
+      "country": "China",
+      "known_for": "Olympic gold medalist as player and coach",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Lang Ping</h4><p class=\"mb-2\">Height: 1.84 m (6'0\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Nicknamed \"The Iron Hammer,\" Lang Ping is a trailblazer in international volleyball. She led China to Olympic gold as a dominant outside hitter in 1984. Later, as a coach, she guided China to another Olympic gold in 2016, making her the first person to win Olympic gold both as a player and coach. Her legacy includes influencing generations of Chinese players and helping globalize women's volleyball. Revered for her discipline, poise, and innovation.</p>"
+    },
+    {
+      "name": "Francesca Piccinini",
+      "country": "Italy",
+      "known_for": "World Champion",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Francesca Piccinini</h4><p class=\"mb-2\">Height: 1.84 m (6'0\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>A five-time Olympian, Piccinini represented the Italian national team for nearly two decades. She helped Italy win the 2002 World Championship and numerous European medals. Stylish and charismatic, she became a role model in Italy. Her versatility and professionalism allowed her to adapt over time, remaining elite well into her 30s.</p>"
+    },
+    {
+      "name": "Thaisa Menezes",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Thaisa Menezes</h4><p class=\"mb-2\">Height: 1.96 m (6'5\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>A middle blocker with exceptional athleticism and timing, Thaisa won Olympic gold in 2008 and 2012. She was also part of Brazil's 2010 World Championship silver medal run. Her blocking and quick attacking helped define Brazil's success in that era. Despite major injuries, Thaisa fought back to play professionally and maintain her elite form.</p>"
+    },
+    {
+      "name": "Fernanda Garay",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Fernanda Garay</h4><p class=\"mb-2\">Height: 1.79 m (5'10\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Fernanda was a clutch performer for Brazil, winning Olympic gold in 2012 and silver in 2020. She was known for her aggressive serving, tactical defense, and emotional energy. A fan favorite, Fernanda provided stability in both reception and attacking for over a decade.</p>"
+    },
+    {
+      "name": "Jaqueline Carvalho",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Jaqueline Carvalho</h4><p class=\"mb-2\">Height: 1.86 m (6'1\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Carvalho was a fixture in Brazil's golden generation, capturing two Olympic golds (2008, 2012). Renowned for her graceful play, communication, and versatility, she played a critical role in key matches. She's also remembered for her strong presence on and off the court and long-time partnership with Murilo Endres.</p>"
+    },
+    {
+      "name": "Phil Dalhausser",
+      "country": "USA",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Phil Dalhausser</h4><p class=\"mb-2\">Height: 2.06 m (6'9\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Nicknamed \"The Thin Beast,\" Dalhausser dominated the beach volleyball scene with his imposing height and deceptive agility. He won Olympic gold in 2008 with Todd Rogers and accumulated over 60 career titles. Known for his fierce blocking, laser-guided jump serves, and calm demeanor under pressure, Dalhausser also competed in the 2012, 2016, and 2020 Olympics. He remains one of the most physically dominant players in beach volleyball history.</p>"
+    },
+    {
+      "name": "Todd Rogers",
+      "country": "USA",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Todd Rogers</h4><p class=\"mb-2\">Height: 1.88 m (6'2\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Known as \"The Professor\" for his brilliant tactical mind, Rogers played a key role in coaching and strategizing during his partnerships. He paired with Dalhausser to win the 2008 Olympic gold and a 2007 FIVB World Championship. Rogers brought a cerebral style to the game, reading the offense better than almost anyone and setting the standard for future defenders.</p>"
+    },
+    {
+      "name": "Anders Mol",
+      "country": "Norway",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Anders Mol</h4><p class=\"mb-2\">Height: 1.98 m (6'6\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Mol is part of the young Norwegian duo that stunned the world, winning Olympic gold in 2020 with Christian Sørum. With quick reflexes, offensive versatility, and elite blocking, Mol has won multiple European Championships and World Tour Finals. He's known for changing the tempo and geometry of modern beach volleyball.</p>"
+    },
+    {
+      "name": "Christian Sørum",
+      "country": "Norway",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Christian Sørum</h4><p class=\"mb-2\">Height: 1.92 m (6'3\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Sørum is the quicker, defensive partner of Anders Mol. Their chemistry and innovation have redefined the sport. Olympic gold medalist in 2020, he is celebrated for his agility, vision, and dynamic transition game. Together, Mol and Sørum are reshaping beach volleyball with speed and strategy.</p>"
+    },
+    {
+      "name": "Julius Brink",
+      "country": "Germany",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Julius Brink</h4><p class=\"mb-2\">Height: 1.85 m (6'1\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Brink captured Olympic gold in 2012 with Jonas Reckermann, the first European men's team to achieve this feat. Known for his emotional leadership and precision, Brink also won a 2009 World Championship. He brought a unique mix of grit, flair, and German efficiency to the sand.</p>"
+    },
+    {
+      "name": "Jonas Reckermann",
+      "country": "Germany",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Jonas Reckermann</h4><p class=\"mb-2\">Height: 1.93 m (6'4\")</p><p class=\"mb-2\">Discipline: Beach</p><p>Reckermann's partnership with Brink culminated in Olympic gold and a World Championship. A cerebral blocker with refined technique and footwork, he dealt with significant injuries throughout his career but remained one of Europe's top players. His success helped popularize the sport in Germany.</p>"
+    }
+  ,
+    {
+      "name": "Natalia Pereira",
+      "country": "Brazil",
+      "known_for": "Olympic champion",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Natalia Pereira</h4><p class=\"mb-2\">Height: 1.86 m (6'1\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>A powerful outside hitter for Brazil, Natalia won Olympic gold in 2012 and has been a consistent force in international volleyball. Known for her explosive attacking and strong blocking, she has played professionally in top leagues worldwide. Her versatility and leadership have made her a cornerstone of Brazilian volleyball.</p>"
+    },
+    {
+      "name": "Simone Giannelli",
+      "country": "Italy",
+      "known_for": "Olympic silver medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Simone Giannelli</h4><p class=\"mb-2\">Height: 1.98 m (6'6\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>A prodigious setter who debuted for Italy at just 18 years old, Giannelli helped Italy win silver at the 2016 Olympics. Known for his exceptional hands, court vision, and athletic ability, he has revolutionized the setter position with his dynamic play. His precision and creativity make him one of the world's premier playmakers.</p>"
+    },
+    {
+      "name": "Facundo Conte",
+      "country": "Argentina",
+      "known_for": "Olympic bronze medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Facundo Conte</h4><p class=\"mb-2\">Height: 1.98 m (6'6\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Son of volleyball legend Hugo Conte, Facundo has carved his own legacy as one of Argentina's greatest players. He helped Argentina win bronze at the 2020 Olympics, their first medal since 1988. Known for his powerful attacking and emotional leadership, Conte has played professionally in top leagues around the world.</p>"
+    },
+    {
+      "name": "Nataliya Goncharova",
+      "country": "Russia",
+      "known_for": "Olympic champion",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Nataliya Goncharova</h4><p class=\"mb-2\">Height: 1.96 m (6'5\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>One of the most powerful opposite hitters in women's volleyball, Goncharova led Russia to gold at the 2020 Olympics. Known for her devastating spike and ability to score from any position, she has been the scoring leader in numerous international tournaments. Her combination of power and precision makes her nearly unstoppable when in form.</p>"
+    },
+    {
+      "name": "Murilo Endres",
+      "country": "Brazil",
+      "known_for": "Olympic silver medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Murilo Endres</h4><p class=\"mb-2\">Height: 1.90 m (6'3\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>A cornerstone of Brazil's men's team for over a decade, Murilo won Olympic silver medals in 2008 and 2012. Known for his exceptional passing and defensive skills, he was often tasked with receiving the opponent's toughest serves. Married to Brazilian volleyball star Jaqueline Carvalho, they form one of volleyball's most famous couples.</p>"
+    },
+    {
+      "name": "Nikola Grbić",
+      "country": "Serbia",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Nikola Grbić</h4><p class=\"mb-2\">Height: 1.93 m (6'4\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>One of the greatest setters in volleyball history, Grbić led Yugoslavia/Serbia to Olympic gold in 2000 and numerous other international medals. Known for his precision, court vision, and leadership, he has successfully transitioned to coaching, leading Poland to the 2022 World Championship. His tactical understanding of the game has made him respected as both player and coach.</p>"
+    },
+    {
+      "name": "Virna Dias",
+      "country": "Brazil",
+      "known_for": "Olympic bronze medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Virna Dias</h4><p class=\"mb-2\">Height: 1.80 m (5'11\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>A key figure in Brazil's rise to prominence in women's volleyball, Virna won Olympic bronze in 1996 and 2000. Known for her powerful attacking and emotional leadership, she helped establish Brazil as a global volleyball powerhouse. Her charismatic personality made her one of Brazil's most popular athletes during her career.</p>"
+    },
+    {
+      "name": "Natalie Cook",
+      "country": "Australia",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Natalie Cook</h4><p class=\"mb-2\">Height: 1.75 m (5'9\")</p><p class=\"mb-2\">Discipline: Beach</p><p>A pioneer of Australian beach volleyball, Cook won Olympic gold in 2000 with Kerri Pottharst and bronze in 1996. She is the only Australian athlete to compete in five consecutive Summer Olympics (1996-2012). Known for her determination, tactical intelligence, and advocacy for the sport, Cook helped establish beach volleyball in Australia and the Pacific region.</p>"
+    },
+    {
+      "name": "Bernardo Rezende",
+      "country": "Brazil",
+      "known_for": "Legendary coach",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Bernardo Rezende \"Bernardinho\"</h4><p class=\"mb-2\">Height: 1.84 m (6'0\")</p><p class=\"mb-2\">Discipline: Indoor (Coach)</p><p>The most successful volleyball coach in history, Bernardinho led Brazil's men's team to Olympic gold in 2004 and 2016, plus silver in 2008 and 2012. As a player, he won Olympic silver in 1984. His methodical approach, attention to detail, and psychological mastery have made him a coaching legend. Father of volleyball star Bruno Rezende, creating a volleyball dynasty.</p>"
+    },
+    {
+      "name": "Bruno Rezende",
+      "country": "Brazil",
+      "known_for": "Olympic gold medalist",
+      "detailed_info": "<h4 class=\"font-bold text-lg mb-2\">Bruno Rezende \"Bruninho\"</h4><p class=\"mb-2\">Height: 1.90 m (6'3\")</p><p class=\"mb-2\">Discipline: Indoor</p><p>Son of legendary coach Bernardinho, Bruno has established himself as one of the greatest setters in volleyball history. He led Brazil to Olympic gold in 2016 and silver in 2008, 2012, and 2020. Known for his exceptional court vision, leadership, and tactical intelligence, Bruno has been named Best Setter at numerous international tournaments. His precision and creativity make him the quarterback of Brazil's offense.</p>"
+    }
+  ]
+}

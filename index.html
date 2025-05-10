@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Team Generator</title>
+    <meta name="description" content="Create balanced volleyball teams from your player roster with this easy-to-use team generator tool">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0cce9e">
+    <!-- jsPDF will be loaded on demand when needed -->
+    
+    <script>
+        // Register Service Worker for PWA support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+    <style>
+        :root {
+            --color-black: #0a0e14;
+            --color-dark: #121820;
+            --color-darker: #0d131a;
+            --color-teal: #0cce9e;
+            --color-teal-dark: #0aa683;
+            --color-teal-muted: #0aa68333;
+            --color-coral: #ff6b6b;
+            --color-coral-dark: #e05c5c;
+            --color-coral-muted: #e05c5c33;
+            --color-gray: #2a3340;
+            --color-gray-dark: #1e2630;
+            --color-light-gray: #4a5568;
+            --color-accent-blue: #2c3e50;
+            --color-accent-purple: #34495e;
+            --border-radius: 1rem;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+        }
+        
+        body {
+            background-color: var(--color-black);
+            color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--color-teal-muted) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, var(--color-coral-muted) 0%, transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-teal);
+            color: var(--color-black);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-teal-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-coral);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-coral-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .card {
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .team-card {
+            background-color: var(--color-darker);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform var(--transition-normal);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .team-header {
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-purple));
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .team-body {
+            padding: 1.5rem;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: var(--color-gray);
+            border: 2px solid var(--color-light-gray);
+            border-radius: 0.75rem;
+            color: white;
+            transition: all var(--transition-fast);
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border-color: var(--color-teal);
+            outline: none;
+            box-shadow: 0 0 0 3px var(--color-teal-muted);
+        }
+        
+        .error-message {
+            color: var(--color-coral);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Offline mode styling */
+        .offline-mode {
+            position: relative;
+        }
+        
+        .offline-mode::after {
+            content: "OFFLINE MODE";
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--color-coral);
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 100;
+        }
+
+        .info-button {
+            background-color: var(--color-teal);
+            color: var(--color-black);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            border: none;
+            font-weight: bold;
+        }
+
+        .info-button:hover {
+            background-color: var(--color-teal-dark);
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all var(--transition-fast);
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+            color: var(--color-coral);
+        }
+    </style>
+</head>
+<body class="flex flex-col">
+    <header class="p-6 bg-opacity-50" style="background-color: var(--color-darker);">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-2 flex items-center justify-center">
+                <svg class="w-8 h-8 mr-3" style="color: var(--color-teal)" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                </svg>
+                Volleyball Team Generator
+            </h1>
+            <p class="text-gray-400">Create balanced teams from your player roster</p>
+        </div>
+    </header>
+
+    <main class="flex-grow p-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="card mb-8">
+                <h2 class="text-2xl font-bold mb-6">Player Setup</h2>
+                
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="block font-medium">Number of Players</label>
+                        <input type="number" id="playerCount" min="4" value="10" class="w-32">
+                        <p class="text-sm text-gray-400">Minimum 4 players required</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block font-medium">Players per Team</label>
+                        <input type="number" id="teamSize" min="2" value="5" class="w-32">
+                    </div>
+
+                    <div class="space-y-4">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="balanceTeams" checked class="w-4 h-4 mr-2">
+                            Distribute extra players evenly
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="shufflePlayers" checked class="w-4 h-4 mr-2">
+                            Randomize player order
+                        </label>
+                    </div>
+
+                    <button id="generateTeams" class="btn btn-primary w-full">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                        </svg>
+                        Generate Teams
+                    </button>
+                </div>
+            </div>
+
+            <div id="results" class="hidden space-y-8">
+                <h2 class="text-2xl font-bold">Generated Teams</h2>
+                <div id="teamContainer" class="grid gap-6 md:grid-cols-2"></div>
+                
+                <div class="flex gap-4 justify-center flex-wrap">
+                    <button id="regenerateTeams" class="btn btn-secondary">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"/>
+                        </svg>
+                        Regenerate
+                    </button>
+                    <button id="copyTeams" class="btn btn-secondary">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"/>
+                            <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"/>
+                        </svg>
+                        Copy
+                    </button>
+                    <button id="downloadPdf" class="btn btn-primary">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
+                        </svg>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for player info -->
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+            </button>
+            <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
+            <p id="modalBio" class="text-gray-300"></p>
+        </div>
+    </div>
+
+    <footer class="p-4 text-center text-gray-400 text-sm" style="background-color: var(--color-darker);">
+        &copy; 2023 Volleyball Team Generator
+    </footer>
+
+    <script>
+        // Volleyball legends data with biographies
+        const legendaryPlayers = [
+            {
+                name: 'Karch Kiraly',
+                bio: 'Known as "The Iron Man", Karch Kiraly is the only player to win Olympic gold medals in both indoor and beach volleyball. A three-time Olympic gold medalist (1984, 1988 indoor; 1996 beach), he is revered for his exceptional ball control, strategic serving, and defensive abilities. His resilience and versatility across different positions made him one of the most respected figures in volleyball history.'
+            },
+            {
+                name: 'Misty May-Treanor',
+                bio: 'A three-time Olympic gold medalist (2004, 2008, 2012), Misty May-Treanor formed the most successful beach volleyball partnership with Kerri Walsh Jennings. The daughter of a 1968 US volleyball Olympian, she was introduced to the sport in Santa Monica and went on to set numerous records, including winning 112 tournaments in domestic and international competition before retiring after the 2012 London Olympics.'
+            },
+            {
+                name: 'Kerri Walsh Jennings',
+                bio: 'Known as "Six Feet of Sunshine", Kerri Walsh Jennings is a three-time Olympic gold medalist (2004, 2008, 2012) in beach volleyball. Partnering with Misty May-Treanor, they formed the greatest beach volleyball team of all time, setting records including a 112-match winning streak. She holds the record for career victories with 135 international and domestic tournaments.'
+            },
+            {
+                name: 'Giba',
+                bio: 'Gilberto "Giba" Godoy Filho is a Brazilian volleyball legend known for his explosive jumps and tactical spikes. An Olympic gold medalist (2004) and three-time World Champion (2002, 2006, 2010), he was considered the best volleyball player in the world during the 2000s. Despite not being very tall for the sport, his unique physical skills and jumping abilities made him a beloved figure in volleyball.'
+            },
+            {
+                name: 'Saori Kimura',
+                bio: 'A Japanese volleyball icon, Saori Kimura led her national team as captain and participated in four Olympics (2004-2016), winning bronze in 2012. Known for her versatility and leadership, she played professionally in Japan and Turkey, earning numerous individual awards including Best Server and MVP titles throughout her career.'
+            },
+            {
+                name: 'Sergio Santos',
+                bio: 'Known as "Serginho", he is widely regarded as one of the best liberos of all time. A two-time Olympic gold medalist (2004, 2016) and two-time World Champion (2006, 2010), he made history as the first libero to be named MVP in the World League. His outstanding reception and defensive capabilities made him a cornerstone of Brazil\'s golden era.'
+            },
+            {
+                name: 'Yekaterina Gamova',
+                bio: 'One of Russia\'s most decorated volleyball players, known for her exceptional height and blocking ability.'
+            },
+            {
+                name: 'Natalie Cook',
+                bio: 'Australian beach volleyball pioneer and Olympic gold medalist, known for her competitive spirit and longevity in the sport.'
+            },
+            {
+                name: 'Emanuel Rego',
+                bio: 'Brazilian beach volleyball legend with multiple Olympic medals and World Tour victories.'
+            },
+            {
+                name: 'Logan Tom',
+                bio: 'American volleyball player known for her powerful attacking and all-around skills.'
+            },
+            {
+                name: 'Sheilla Castro',
+                bio: 'Brazilian volleyball star known for her exceptional attacking abilities.'
+            },
+            {
+                name: 'Virna Dias',
+                bio: 'Brazilian volleyball player renowned for her technical skills and leadership.'
+            }
+        ];
+
+        // DOM Elements
+        const elements = {
+            playerCount: document.getElementById('playerCount'),
+            teamSize: document.getElementById('teamSize'),
+            balanceTeams: document.getElementById('balanceTeams'),
+            shufflePlayers: document.getElementById('shufflePlayers'),
+            generateTeams: document.getElementById('generateTeams'),
+            regenerateTeams: document.getElementById('regenerateTeams'),
+            copyTeams: document.getElementById('copyTeams'),
+            downloadPdf: document.getElementById('downloadPdf'),
+            results: document.getElementById('results'),
+            teamContainer: document.getElementById('teamContainer')
+        };
+
+        // Utility functions
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function getPlayers() {
+            const count = parseInt(elements.playerCount.value);
+            return Array.from({length: count}, (_, i) => `Player ${i + 1}`);
+        }
+
+        function validateInput() {
+            const players = getPlayers();
+            const teamSize = parseInt(elements.teamSize.value);
+            
+            if (players.length < 4) {
+                alert('Please enter at least 4 players');
+                return false;
+            }
+            if (teamSize < 2) {
+                alert('Team size must be at least 2 players');
+                return false;
+            }
+            if (teamSize > players.length) {
+                alert('Team size cannot be larger than the number of players');
+                return false;
+            }
+            return true;
+        }
+
+        function createTeams() {
+            if (!validateInput()) return;
+
+            let players = getPlayers();
+            if (elements.shufflePlayers.checked) {
+                players = shuffle([...players]);
+            }
+
+            const teamSize = parseInt(elements.teamSize.value);
+            const numTeams = Math.ceil(players.length / teamSize);
+            const teams = Array.from({length: numTeams}, () => []);
+            
+            if (elements.balanceTeams.checked) {
+                // Improved distribution algorithm for more balanced teams
+                
+                // First, calculate how many players each team should have
+                const playersPerTeam = Math.floor(players.length / numTeams);
+                const extraPlayers = players.length % numTeams;
+                
+                // Distribute players evenly with the improved algorithm
+                let playerIndex = 0;
+                
+                // First, give each team the minimum number of players
+                for (let teamIndex = 0; teamIndex < numTeams; teamIndex++) {
+                    for (let i = 0; i < playersPerTeam; i++) {
+                        teams[teamIndex].push(players[playerIndex]);
+                        playerIndex++;
+                    }
+                }
+                
+                // Then distribute any extra players (one per team)
+                for (let i = 0; i < extraPlayers; i++) {
+                    teams[i].push(players[playerIndex]);
+                    playerIndex++;
+                }
+                
+                // Optionally shuffle the teams to avoid predictable patterns
+                if (numTeams > 2) {
+                    shuffle(teams);
+                }
+            } else {
+                // Fill teams sequentially
+                for (let i = 0; i < players.length; i++) {
+                    teams[Math.floor(i / teamSize)].push(players[i]);
+                }
+            }
+
+            return teams;
+        }
+        
+        function generateTeams() {
+            const teams = createTeams();
+            if (teams) {
+                displayTeams(teams, false); // Don't shuffle team names on first generation
+            }
+        }
+        
+        function regenerateTeams() {
+            const teams = createTeams();
+            if (teams) {
+                displayTeams(teams, true); // Shuffle team names on regeneration
+            }
+        }
+
+        // Modal elements and handlers
+        const modal = document.getElementById('playerModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBio = document.getElementById('modalBio');
+        const modalClose = document.querySelector('.modal-close');
+
+        // This function is no longer needed as we handle player info directly in the click event
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Load famous players from players.json
+        let famousPlayers = [];
+        let availablePlayers = [];
+        
+        // Fetch the players data from players.json with caching
+        const cachedPlayers = localStorage.getItem('cachedPlayers');
+        const cacheTimestamp = localStorage.getItem('playersCacheTimestamp');
+        const cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+        
+        // Use cached data if available and not expired
+        if (cachedPlayers && cacheTimestamp && (Date.now() - parseInt(cacheTimestamp)) < cacheExpiry) {
+            try {
+                famousPlayers = JSON.parse(cachedPlayers);
+                resetAvailablePlayers();
+                console.log('Using cached player data');
+            } catch (e) {
+                fetchFreshPlayerData();
+            }
+        } else {
+            fetchFreshPlayerData();
+        }
+        
+        function fetchFreshPlayerData() {
+            // Show a loading indicator
+            const loadingToast = showToast('Loading player data...', 'info');
+            
+            fetch('players.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    famousPlayers = data.players;
+                    resetAvailablePlayers();
+                    
+                    // Hide loading indicator and show success
+                    hideToast(loadingToast);
+                    showToast('Player data loaded successfully!', 'success', 2000);
+                    
+                    // Cache the data
+                    try {
+                        localStorage.setItem('cachedPlayers', JSON.stringify(famousPlayers));
+                        localStorage.setItem('playersCacheTimestamp', Date.now().toString());
+                    } catch (e) {
+                        console.warn('Could not cache player data:', e);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading players:', error);
+                    // Hide loading indicator and show error
+                    hideToast(loadingToast);
+                    showToast('Could not load player data. Using backup data.', 'error', 3000);
+                    
+                    // Fallback to legendary players if fetch fails
+                    famousPlayers = legendaryPlayers;
+                    resetAvailablePlayers();
+                });
+        }
+        
+        // Toast notification system
+        function showToast(message, type = 'info', duration = 0) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-4 right-4 px-4 py-2 rounded-lg text-white z-50 transition-opacity duration-300`;
+            
+            // Set background color based on type
+            switch(type) {
+                case 'success':
+                    toast.style.backgroundColor = 'var(--color-teal)';
+                    break;
+                case 'error':
+                    toast.style.backgroundColor = 'var(--color-coral)';
+                    break;
+                case 'info':
+                default:
+                    toast.style.backgroundColor = 'var(--color-gray)';
+            }
+            
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            // Auto-hide after duration if specified
+            if (duration > 0) {
+                setTimeout(() => {
+                    hideToast(toast);
+                }, duration);
+            }
+            
+            return toast;
+        }
+        
+        function hideToast(toast) {
+            if (!toast || !document.body.contains(toast)) return;
+            
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                if (document.body.contains(toast)) {
+                    document.body.removeChild(toast);
+                }
+            }, 300);
+        }
+        }
+        
+        // Reset the available players pool
+        function resetAvailablePlayers() {
+            availablePlayers = [...famousPlayers];
+        }
+        
+        // Get a unique player from the available pool
+        function getUniquePlayer() {
+            // If we've used all available players, reset the pool
+            if (availablePlayers.length === 0) {
+                resetAvailablePlayers();
+            }
+            
+            // Get a random index
+            const randomIndex = Math.floor(Math.random() * availablePlayers.length);
+            
+            // Remove and return the player at that index
+            return availablePlayers.splice(randomIndex, 1)[0];
+        }
+        
+        function displayTeams(teams, shuffleTeamNames = false) {
+            elements.teamContainer.innerHTML = '';
+            elements.results.classList.remove('hidden');
+            
+            // Reset available players if shuffling team names
+            if (shuffleTeamNames) {
+                resetAvailablePlayers();
+            }
+
+            teams.forEach((team, index) => {
+                const player = getUniquePlayer();
+                const teamCard = document.createElement('div');
+                teamCard.className = 'team-card';
+                teamCard.innerHTML = `
+                    <div class="team-header">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold">Team ${player.name}</h3>
+                            <button class="info-button" title="View player info">i</button>
+                        </div>
+                        <p class="text-sm opacity-75">${team.length} players</p>
+                    </div>
+                    <div class="team-body">
+                        <ul class="space-y-2">
+                            ${team.map(player => `
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 mr-2 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                                    </svg>
+                                    ${player}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+
+                const infoButton = teamCard.querySelector('.info-button');
+                infoButton.addEventListener('click', () => {
+                    if (player.detailed_info) {
+                        // For players from players.json
+                        modalTitle.textContent = player.name;
+                        modalBio.innerHTML = player.detailed_info;
+                        modal.classList.add('active');
+                    } else if (player.bio) {
+                        // For fallback legendary players
+                        modalTitle.textContent = player.name;
+                        modalBio.textContent = player.bio;
+                        modal.classList.add('active');
+                    }
+                });
+
+                elements.teamContainer.appendChild(teamCard);
+            });
+        }
+
+        function copyTeamsToClipboard() {
+            const teams = Array.from(elements.teamContainer.children).map(card => {
+                const teamName = card.querySelector('h3').textContent;
+                const players = Array.from(card.querySelectorAll('li'))
+                    .map(li => li.textContent.trim());
+                return `${teamName}:\n${players.join('\n')}`;
+            });
+
+            navigator.clipboard.writeText(teams.join('\n\n'))
+                .then(() => alert('Teams copied to clipboard!'))
+                .catch(err => console.error('Failed to copy teams:', err));
+        }
+
+        // PDF Generation Function
+        function generateTeamsPDF() {
+            // Initialize jsPDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Set document properties
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("Volleyball Team List", 105, 20, { align: "center" });
+            
+            // Get all team cards
+            const teamCards = elements.teamContainer.querySelectorAll('.team-card');
+            
+            let yPos = 40; // Starting y position
+            const pageHeight = doc.internal.pageSize.height;
+            
+            // Process each team
+            teamCards.forEach((card, index) => {
+                // Get team name and players
+                const teamName = card.querySelector('h3').textContent;
+                const players = Array.from(card.querySelectorAll('li')).map(li => li.textContent.trim());
+                
+                // Check if we need a new page
+                if (yPos > pageHeight - 40) {
+                    doc.addPage();
+                    yPos = 40;
+                }
+                
+                // Add team name
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.text(teamName, 20, yPos);
+                yPos += 10;
+                
+                // Add players
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(12);
+                players.forEach(player => {
+                    doc.text(`• ${player}`, 30, yPos);
+                    yPos += 8;
+                });
+                
+                // Add spacing between teams
+                yPos += 10;
+            });
+            
+            // Save the PDF
+            doc.save("volleyball-teams.pdf");
+        }
+
+        // Debounce function to limit how often a function can be called
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+        
+        // Offline detection
+        function updateOnlineStatus() {
+            if (navigator.onLine) {
+                document.body.classList.remove('offline-mode');
+                showToast('You are back online!', 'success', 3000);
+            } else {
+                document.body.classList.add('offline-mode');
+                showToast('You are offline. The app will continue to work with cached data.', 'info', 5000);
+            }
+        }
+        
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        
+        // Check initial status
+        if (!navigator.onLine) {
+            document.body.classList.add('offline-mode');
+        }
+        
+        // Event Listeners
+        elements.generateTeams.addEventListener('click', generateTeams);
+        elements.regenerateTeams.addEventListener('click', regenerateTeams);
+        elements.copyTeams.addEventListener('click', copyTeamsToClipboard);
+        elements.downloadPdf.addEventListener('click', function() {
+            if (!navigator.onLine && !window.jspdf) {
+                showToast('PDF generation requires internet connection to load the library.', 'error', 3000);
+                return;
+            }
+            
+            if (!window.jspdf) {
+                const loadingToast = showToast('Loading PDF generator...', 'info');
+                const script = document.createElement('script');
+                script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+                script.onload = function() {
+                    hideToast(loadingToast);
+                    generateTeamsPDF();
+                };
+                script.onerror = function() {
+                    hideToast(loadingToast);
+                    showToast('Failed to load PDF generator. Please try again later.', 'error', 3000);
+                };
+                document.head.appendChild(script);
+            } else {
+                generateTeamsPDF();
+            }
+        });
+        
+        // Add debounced input handlers
+        elements.playerCount.addEventListener('input', debounce(function() {
+            if (elements.results.classList.contains('hidden')) return;
+            generateTeams();
+        }, 500));
+        
+        elements.teamSize.addEventListener('input', debounce(function() {
+            if (elements.results.classList.contains('hidden')) return;
+            generateTeams();
+        }, 500));
+    </script>
+</body>
+</html>
