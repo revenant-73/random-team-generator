@@ -270,6 +270,7 @@
                             <input type="checkbox" id="shufflePlayers" checked class="w-4 h-4 mr-2">
                             Randomize player order
                         </label>
+
                     </div>
 
                     <button id="generateTeams" class="btn btn-primary w-full">
@@ -625,7 +626,6 @@
                 }
             }, 300);
         }
-        }
         
         // Reset the available players pool
         function resetAvailablePlayers() {
@@ -765,13 +765,7 @@
         }
 
         // Debounce function to limit how often a function can be called
-        function debounce(func, wait) {
-            let timeout;
-            return function(...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), wait);
-            };
-        }
+        // Debounce function removed - no longer needed
         
         // Offline detection
         function updateOnlineStatus() {
@@ -819,45 +813,36 @@
         
         if (elements.downloadPdf) {
             elements.downloadPdf.addEventListener('click', function() {
-            if (!navigator.onLine && !window.jspdf) {
-                showToast('PDF generation requires internet connection to load the library.', 'error', 3000);
-                return;
-            }
-            
-            if (!window.jspdf) {
-                const loadingToast = showToast('Loading PDF generator...', 'info');
-                const script = document.createElement('script');
-                script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
-                script.onload = function() {
-                    hideToast(loadingToast);
+                if (!navigator.onLine && !window.jspdf) {
+                    showToast('PDF generation requires internet connection to load the library.', 'error', 3000);
+                    return;
+                }
+                
+                if (!window.jspdf) {
+                    const loadingToast = showToast('Loading PDF generator...', 'info');
+                    const script = document.createElement('script');
+                    script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+                    script.onload = function() {
+                        hideToast(loadingToast);
+                        generateTeamsPDF();
+                    };
+                    script.onerror = function() {
+                        hideToast(loadingToast);
+                        showToast('Failed to load PDF generator. Please try again later.', 'error', 3000);
+                    };
+                    document.head.appendChild(script);
+                } else {
                     generateTeamsPDF();
-                };
-                script.onerror = function() {
-                    hideToast(loadingToast);
-                    showToast('Failed to load PDF generator. Please try again later.', 'error', 3000);
-                };
-                document.head.appendChild(script);
-            } else {
-                generateTeamsPDF();
-            }
-        }); // End of downloadPdf event listener
+                }
+            }); // End of downloadPdf event listener
         } else {
             console.error('Download PDF button not found in DOM');
         }
-        });
         
-        // Add debounced input handlers
-        elements.playerCount.addEventListener('input', debounce(function() {
-            if (elements.results.classList.contains('hidden')) return;
-            generateTeams();
-        }, 500));
+        // No automatic regeneration - user must click the buttons
         
-        elements.teamSize.addEventListener('input', debounce(function() {
-            if (elements.results.classList.contains('hidden')) return;
-            generateTeams();
-        }, 500));
-        
-        } // End of initApp function
+        // End of initApp function
+    }
     </script>
 </body>
 </html>
