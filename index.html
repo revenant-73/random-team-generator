@@ -7,7 +7,7 @@
     <meta name="description" content="Create balanced volleyball teams from your player roster with this easy-to-use team generator tool">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#0cce9e">
     <!-- jsPDF will be loaded on demand when needed -->
     
@@ -15,7 +15,7 @@
         // Register Service Worker for PWA support
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('./sw.js')
                     .then(reg => console.log('Service Worker registered'))
                     .catch(err => console.log('Service Worker registration failed:', err));
             });
@@ -328,6 +328,13 @@
     </footer>
 
     <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+            initApp();
+        });
+        
+        function initApp() {
         // Volleyball legends data with biographies
         const legendaryPlayers = [
             {
@@ -478,9 +485,16 @@
         }
         
         function generateTeams() {
-            const teams = createTeams();
-            if (teams) {
-                displayTeams(teams, false); // Don't shuffle team names on first generation
+            console.log('Generate Teams button clicked');
+            try {
+                const teams = createTeams();
+                console.log('Teams created:', teams);
+                if (teams) {
+                    displayTeams(teams, false); // Don't shuffle team names on first generation
+                }
+            } catch (error) {
+                console.error('Error generating teams:', error);
+                showToast('Error generating teams: ' + error.message, 'error', 5000);
             }
         }
         
@@ -535,7 +549,7 @@
             // Show a loading indicator
             const loadingToast = showToast('Loading player data...', 'info');
             
-            fetch('players.json')
+            fetch('./players.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Network response was not ok: ${response.status}`);
@@ -778,11 +792,33 @@
             document.body.classList.add('offline-mode');
         }
         
-        // Event Listeners
-        elements.generateTeams.addEventListener('click', generateTeams);
-        elements.regenerateTeams.addEventListener('click', regenerateTeams);
-        elements.copyTeams.addEventListener('click', copyTeamsToClipboard);
-        elements.downloadPdf.addEventListener('click', function() {
+        // Event Listeners with debugging
+        console.log('Setting up event listeners');
+        console.log('Generate Teams button:', elements.generateTeams);
+        
+        if (elements.generateTeams) {
+            elements.generateTeams.addEventListener('click', function(e) {
+                console.log('Generate Teams button clicked directly');
+                generateTeams();
+            });
+        } else {
+            console.error('Generate Teams button not found in DOM');
+        }
+        
+        if (elements.regenerateTeams) {
+            elements.regenerateTeams.addEventListener('click', regenerateTeams);
+        } else {
+            console.error('Regenerate Teams button not found in DOM');
+        }
+        
+        if (elements.copyTeams) {
+            elements.copyTeams.addEventListener('click', copyTeamsToClipboard);
+        } else {
+            console.error('Copy Teams button not found in DOM');
+        }
+        
+        if (elements.downloadPdf) {
+            elements.downloadPdf.addEventListener('click', function() {
             if (!navigator.onLine && !window.jspdf) {
                 showToast('PDF generation requires internet connection to load the library.', 'error', 3000);
                 return;
@@ -804,6 +840,10 @@
             } else {
                 generateTeamsPDF();
             }
+        }); // End of downloadPdf event listener
+        } else {
+            console.error('Download PDF button not found in DOM');
+        }
         });
         
         // Add debounced input handlers
@@ -816,6 +856,8 @@
             if (elements.results.classList.contains('hidden')) return;
             generateTeams();
         }, 500));
+        
+        } // End of initApp function
     </script>
 </body>
 </html>

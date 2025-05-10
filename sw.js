@@ -2,10 +2,10 @@
 
 const CACHE_NAME = 'team-generator-v1';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/players.json',
-  '/manifest.json',
+  './',
+  './index.html',
+  './players.json',
+  './manifest.json',
   'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'
 ];
 
